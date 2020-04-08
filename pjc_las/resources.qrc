@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ikonki/kurik.png</file>
+        <file>ikonki/plansza.png</file>
+        <file>animals.cpp</file>
+        <file>animals.h</file>
+        <file>main.cpp</file>
+        <file>mainwindow.cpp</file>
+        <file>mainwindow.h</file>
+    </qresource>
+</RCC>

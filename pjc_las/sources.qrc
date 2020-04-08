@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ikonki/kurik.png</file>
+        <file>ikonki/plansza.png</file>
+    </qresource>
+</RCC>
