@@ -28,12 +28,14 @@ SOURCES += \
         animals.cpp \
         main.cpp \
         mainwindow.cpp \
-        mechanics.cpp
+        mechanics.cpp \
+        plant.cpp
 
 HEADERS += \
         animals.h \
         mainwindow.h \
-        mechanics.h
+        mechanics.h \
+        plant.h
 
 FORMS += \
         mainwindow.ui

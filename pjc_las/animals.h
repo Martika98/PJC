@@ -9,7 +9,9 @@ protected:
     QPixmap icon;
     int poz_x;
     int poz_y;
-    int max_velocity, velocity, stamina, fatigue, life, full_tummy, wounds;
+    double max_velocity, velocity;
+    int stamina, fatigue, life, wounds;
+    double full_tummy;
 public:
     animals();
     QPixmap get_icon();
@@ -17,6 +19,10 @@ public:
     int get_poz_y();
     void set_poz_x(int poz);
     void set_poz_y(int poz);
+    double get_velocity();
+    void live();
+    void set_full_tummy(int nt);
+    double get_full_tummy();
 
 };
 class hare : public animals

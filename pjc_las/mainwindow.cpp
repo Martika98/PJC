@@ -25,5 +25,7 @@ void MainWindow::paintEvent(QPaintEvent *){
     QPainter pen(this);
     pen.drawPixmap(0, 0, QPixmap(":/ikonki/plansza.png"));
     pen.drawPixmap(mechanic->hare_get_poz_x(), mechanic->hare_get_poz_y(), mechanic->hare_get_icon());
+    for(int i = 0; i < mechanic->plant_list.length(); i++)
+         pen.drawPixmap(mechanic->plant_list[i].get_poz_x(), mechanic->plant_list[i].get_poz_y(), mechanic->plant_list[i].get_icon());
 
 }

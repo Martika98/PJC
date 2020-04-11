@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>ikonki/kurik.png</file>
         <file>ikonki/plansza.png</file>
+        <file>ikonki/plant.png</file>
     </qresource>
 </RCC>
