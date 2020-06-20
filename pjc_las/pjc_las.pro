@@ -26,18 +26,27 @@ CONFIG += c++11
 
 SOURCES += \
         animals.cpp \
+        dialog.cpp \
+        gobject.cpp \
         main.cpp \
         mainwindow.cpp \
         mechanics.cpp \
-        plant.cpp
+        object.cpp \
+        plant.cpp \
+        species.cpp
 
 HEADERS += \
         animals.h \
+        dialog.h \
+        gobject.h \
         mainwindow.h \
         mechanics.h \
-        plant.h
+        object.h \
+        plant.h \
+        species.h
 
 FORMS += \
+        dialog.ui \
         mainwindow.ui
 
 # Default rules for deployment.

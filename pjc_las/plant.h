@@ -1,23 +1,25 @@
 #ifndef PLANT_H
 #define PLANT_H
 #include <QPainter>
-#include <QList>
+#include "object.h"
 
-class Plant
+
+class Plant : public Object
 {
-    QPixmap icon;
-    int nutrition = 2;
-    int poz_x;
-    int poz_y;
-
+    int nutrition = 20;
 
 public:
     Plant();
     ~Plant();
-    int get_poz_x();
-    int get_poz_y();
-    QPixmap get_icon();
     int get_nutrition();
+    void update(QList <Object *> food);
+};
+
+class Seeds : public Object{
+public:
+    Seeds();
+    ~Seeds();
+    void update(QList <Object *> Object_list);
 };
 
 #endif // PLANT_H
