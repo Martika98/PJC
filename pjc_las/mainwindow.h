@@ -17,17 +17,19 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(int k, QWidget *parent = nullptr);
+    explicit MainWindow(int k, int w,int m,int l,int n, int roslinka, int waz, int zolw, QWidget *parent = nullptr);
     ~MainWindow();
     void paintEvent(QPaintEvent *event);
     Mechanics *mechanic;
-    QPoint *point = new QPoint(20,20);
+    Gobject *obrazki = new Gobject;
     QString *s = new QString;
+    QList <QPixmap *> picture_list;
 
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
     int kp;
+    int km, wm, mm, lm, nm, rm;
 };
 
 #endif // MAINWINDOW_H

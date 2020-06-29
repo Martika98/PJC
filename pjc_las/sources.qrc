@@ -1,10 +1,17 @@
 <RCC>
     <qresource prefix="/">
-        <file>ikonki/kurik.png</file>
         <file>ikonki/plansza.png</file>
         <file>ikonki/plant.png</file>
-        <file>ikonki/wilk.jpeg</file>
-        <file>ikonki/ziarenka.png</file>
         <file>ikonki/mysz.JPG</file>
+        <file>ikonki/żolw_hide.png</file>
+        <file>ikonki/żolw_safe.png</file>
+        <file>ikonki/bloto.png</file>
+        <file>ikonki/kurlik.png</file>
+        <file>ikonki/lis.png</file>
+        <file>ikonki/misio.png</file>
+        <file>ikonki/woz.png</file>
+        <file>ikonki/wilk.png</file>
+        <file>ikonki/glaz.png</file>
+        <file>ikonki/ziarenka.png</file>
     </qresource>
 </RCC>

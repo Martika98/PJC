@@ -7,12 +7,14 @@
 
 
 
+
 class Gobject
 {
-    Object *obiekt;
+
 public:
-    Gobject(Object *gobiekt);
-    void draw(QPainter pen);
+    QList <QPixmap *> picture_list;
+    Gobject();
+    ~Gobject();
 };
 
 #endif // GOBJECT_H

@@ -1,8 +1,9 @@
 #include "mechanics.h"
 
 
-Mechanics::Mechanics(int k)
+Mechanics::Mechanics(int k, int w, int m, int l, int n, int r, int wo, int z)
 {
+
     timer = new QTimer;
     timer_2 = new QTimer;
 
@@ -13,13 +14,16 @@ Mechanics::Mechanics(int k)
 
     number_h = k;
 
-    for(int i = 0; i<30; i++)
+    for(int i = 0; i<r; i++)
     {
         Plant *new_plant = new Plant();
         Object_list.append(new_plant);
 
         Seeds *new_seed = new Seeds();
         Object_list.append(new_seed);
+
+        Stones *new_stone = new Stones();
+        Object_list.append(new_stone);
 //        Gobject *new_gplant = new Gobject(new_plant);
 //        Gobject_list.append(new_gplant);
     }
@@ -31,19 +35,47 @@ Mechanics::Mechanics(int k)
 //        Gobject_list.append(new_ghare);
     }
 
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < w; i++){
         wolf *wolf_ = nullptr;
         wolf_ = new wolf();
         Object_list.append(wolf_);
+//        Gobject *new_gwolf = new Gobject(wolf_);
+//        Gobject_list.append(new_gwolf);
     }
 
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < m; i++){
         Mouse *mouse = nullptr;
         mouse = new Mouse();
         Object_list.append(mouse);
+    }
 
-//        Gobject *new_gwolf = new Gobject(wolf_);
-//        Gobject_list.append(new_gwolf);
+    for(int i = 0; i < l; i++){
+         Fox *fox = nullptr;
+         fox = new Fox();
+         Object_list.append(fox);
+//        Gobject *new_mouse = new Gobject(mouse);
+//        Gobject_list.append(new_mouse);
+    }
+    for(int i = 0; i < n; i++){
+         Bear *b = nullptr;
+         b = new Bear();
+         Object_list.append(b);
+    }
+    for(int i = 0; i < wo; i++){
+         Snake *b = nullptr;
+         b = new Snake();
+         Object_list.append(b);
+    }
+    for(int i = 0; i < z; i++){
+         Tortoise *b = nullptr;
+         b = new Tortoise();
+         Object_list.append(b);
+    }
+    int cmud = rand()%4;
+    for(int i = 0; i < cmud; i++)
+    {
+        Mud *md = new Mud();
+        Object_list.append(md);
     }
 }
 void Mechanics::snap()
@@ -52,37 +84,24 @@ void Mechanics::snap()
     for(int i = 0; i < Object_list.length(); i++){
         k = Object_list[i];
         k->update(Object_list);
+        if(k->nexist){
+            k->~Object();
+            Object_list.removeAt(i);
 
-//        hare_list[i].run(Object_list, p1, p2, p01, p02, temp, dist);
+            i = i - 1;
+        }
 
-//        if(hare_list[i].get_safety()){
-//            hare_list[i].eat(Object_list, p1, p2, p01, p02, temp, dist, j);
-//            //if(hare_list[i].get_life()<70)
-//              //  hare_list[i].reproduction();
-//        }
-//        if(hare_list[i].live() <= 0){
-//            hare_list.removeAt(i);
-//            i--;
-//        }
-//    }
-//    for(int i = 0; i < wolf_list.length(); i++){
-
-//        wolf_list[i].find_prey(hare_list, wolf_list[i], p1, p2, p01, p02, temp, dist, j);
-//        if(wolf_list[i].live() == 0){
-//            wolf_list.removeAt(i);
-//            i--;
-//        }
-
-//    }
     }
 }
 void Mechanics::growing_plants(){
+    for (int i = 0; i < 6; i++) {
     Plant *new_plant = nullptr;
     new_plant = new Plant();
     Object_list.append(new_plant);
 
+
     Seeds *new_seed = new Seeds();
     Object_list.append(new_seed);
-}
+}}
 
 

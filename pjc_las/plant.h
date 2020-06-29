@@ -3,6 +3,7 @@
 #include <QPainter>
 #include "object.h"
 
+class animals;
 
 class Plant : public Object
 {
@@ -20,6 +21,28 @@ public:
     Seeds();
     ~Seeds();
     void update(QList <Object *> Object_list);
+};
+
+class Mud : public Object{
+    int center_x;
+    int center_y;
+public:
+    Mud();
+    void change_velocity(QList <Object *> &Object_list);
+    void update(QList <Object *> &Object_list);
+
+};
+class Trees : public Object{
+public:
+    Trees();
+    void change_visibility();
+    void change_fatigue();
+
+};
+class Stones : public Object{
+public:
+    Stones();
+    void change_visibility();
 };
 
 #endif // PLANT_H

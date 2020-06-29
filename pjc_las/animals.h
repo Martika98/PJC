@@ -11,14 +11,20 @@ class animals : public Object
 protected:
     double max_velocity, velocity, life, full_tummy;
     int stamina, fatigue, wounds;
-    bool safety, visibility;
+    bool safety;
+    bool visibility = true;
+    int fertility;
+
 
 public:
+    Object *partner = nullptr;
     animals();
     virtual ~animals();
     void set_poz_x(int poz);
     void set_poz_y(int poz);
     double get_velocity();
+    double get_maxvelocity();
+    void set_velocity(double v);
     virtual void update(QList<Object *> &food);
     double get_full_tummy();
     virtual void eat(QList <Object *> &food);
@@ -30,7 +36,10 @@ public:
     double get_life();
     bool get_visibility();
     void set_visibility(bool v);
+    int get_fertility();
+    void set_fertility(int a);
     void live();
+
 
 
 };

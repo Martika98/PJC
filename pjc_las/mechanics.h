@@ -10,11 +10,7 @@ class Mechanics : public QObject
 {
     Q_OBJECT
 public:
-    Mechanics(int k);
-//    int hare_get_poz_x();
-//    int hare_get_poz_y();
-//    QPixmap hare_get_icon();
-//    QList <animals *> Animals_list;
+    Mechanics(int k, int w, int m, int l, int n, int r, int wo, int z);
     QList <Object *> Object_list;
     QList <Gobject *> Gobject_list;
      int p1, p2, p01, p02, j;
