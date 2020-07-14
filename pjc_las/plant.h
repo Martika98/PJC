@@ -13,14 +13,16 @@ public:
     Plant();
     ~Plant();
     int get_nutrition();
-    void update(QList <Object *> food);
+    int update(QList <Object *> &food);
 };
 
 class Seeds : public Object{
+
+    int nutrition = 20;
 public:
     Seeds();
     ~Seeds();
-    void update(QList <Object *> Object_list);
+    int update(QList <Object *> &Object_list);
 };
 
 class Mud : public Object{
@@ -29,7 +31,7 @@ class Mud : public Object{
 public:
     Mud();
     void change_velocity(QList <Object *> &Object_list);
-    void update(QList <Object *> &Object_list);
+    int update(QList <Object *> &Object_list);
 
 };
 class Trees : public Object{
@@ -37,12 +39,16 @@ public:
     Trees();
     void change_visibility();
     void change_fatigue();
+    int update(QList <Object *> &Object_list);
 
 };
 class Stones : public Object{
+    int center_x;
+    int center_y;
 public:
     Stones();
-    void change_visibility();
+    void change_visibility(QList <Object *> &Object_list);
+    int update(QList <Object *> &Object_list);
 };
 
 #endif // PLANT_H

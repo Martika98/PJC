@@ -19,5 +19,9 @@ int Object::get_poz_y(){
 Object::~Object(){
 
 }
-void Object::update(QList<Object *> &food){
+void Object::set_nexist(){
+    nexist = true;
+}
+bool Object::get_nexist(){
+    return nexist;
 }

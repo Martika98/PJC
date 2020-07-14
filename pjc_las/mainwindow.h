@@ -21,7 +21,6 @@ public:
     ~MainWindow();
     void paintEvent(QPaintEvent *event);
     Mechanics *mechanic;
-    Gobject *obrazki = new Gobject;
     QString *s = new QString;
     QList <QPixmap *> picture_list;
 

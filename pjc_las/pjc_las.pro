@@ -26,24 +26,36 @@ CONFIG += c++11
 
 SOURCES += \
         animals.cpp \
+        bear.cpp \
         dialog.cpp \
+        fox.cpp \
         gobject.cpp \
+        hare.cpp \
         main.cpp \
         mainwindow.cpp \
         mechanics.cpp \
+        mouse.cpp \
         object.cpp \
         plant.cpp \
-        species.cpp
+        snake.cpp \
+        tortoise.cpp \
+        wolf.cpp
 
 HEADERS += \
         animals.h \
+        bear.h \
         dialog.h \
+        fox.h \
         gobject.h \
+        hare.h \
         mainwindow.h \
         mechanics.h \
+        mouse.h \
         object.h \
         plant.h \
-        species.h
+        snake.h \
+        tortoise.h \
+        wolf.h
 
 FORMS += \
         dialog.ui \
@@ -56,3 +68,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     sources.qrc
+
+DISTFILES += \
+    ikonki/mouse.png

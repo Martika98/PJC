@@ -1,9 +1,15 @@
 #include "animals.h"
-animals::animals(){
+animals::animals(double a, double b, int c){
     fertility = 0;
+    life = a;
+    max_velocity = b;
+    stamina = c;
+    fatigue = 0;
+    visibility = true;
 }
 animals::~animals(){
-
+    if(partner != nullptr)
+        partner->partner = nullptr;
 }
 
 bool animals::get_visibility(){
@@ -29,14 +35,25 @@ double animals::get_maxvelocity(){
 void animals::set_velocity(double v){
     velocity = v;
 }
+void animals::set_wounds(int a){
+    wounds = a;
+}
 void animals::live(){
-    full_tummy -= 0.5;
-    fertility += 1;
-    if(full_tummy < 30)
+    full_tummy -= 0.35;
+    fertility += 1.1;
+    if(full_tummy < 20)
         life -= 0.5;
     life -= 0.1;
     if (life < 0)
-        nexist = true;
+        set_nexist();
+    if(fatigue > 0){
+        fatigue -= stamina;
+        fatigue += wounds;
+        if(fatigue < 0)
+            fatigue = 0;
+    }
+    if (wounds < 0)
+        wounds -= 1;
 }
 void animals::set_full_tummy(double nt){
     full_tummy += nt;
@@ -52,12 +69,7 @@ int animals::get_fertility(){
 void animals:: set_fertility(int a){
     fertility = a;
 }
-
-void animals::reproduction(){
-}
-
 void animals::run(QList <Object *> & Predator_list){
-
 }
 bool animals::get_safety(){
     return safety;
@@ -65,10 +77,7 @@ bool animals::get_safety(){
 double animals::get_life(){
     return life;
 }
-void animals::eat(QList <Object *> &food){
-}
-void animals::update(QList <Object *> &food){
-}
+
 
 
 

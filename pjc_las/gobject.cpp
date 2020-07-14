@@ -1,53 +1,81 @@
 #include "gobject.h"
+#include "mechanics.h"
 
 
 
-Gobject::Gobject()
+Gobject::Gobject(Object * obi)
 {
-    QPixmap *picture1 = new QPixmap(":/ikonki/plansza.png");
-    picture_list.append(picture1);
+    ob = obi;
 
-    QPixmap *picture2 = new QPixmap(":/ikonki/kurlik.png");
-    picture_list.append(picture2);
-
-    QPixmap *picture3 = new QPixmap(":/ikonki/wilk.png");
-    picture_list.append(picture3);
-
-    QPixmap *picture4 = new QPixmap(":/ikonki/plant.png");
-    picture_list.append(picture4);
-
-    QPixmap *picture5 = new QPixmap(":/ikonki/mysz.JPG");
-    picture_list.append(picture5);
-
-    QPixmap *picture6 = new QPixmap(":/ikonki/ziarenka.png");
-    picture_list.append(picture6);
-
-    QPixmap *picture7 = new QPixmap(":/ikonki/lis.png");
-    picture_list.append(picture7);
-
-    QPixmap *picture8 = new QPixmap(":/ikonki/misio.png");
-    picture_list.append(picture8);
-
-    QPixmap *picture9 = new QPixmap(":/ikonki/woz.png");
-    picture_list.append(picture9);
-
-    QPixmap *picture10 = new QPixmap(":/ikonki/żolw_hide.png");
-    picture_list.append(picture10);
-
-    QPixmap *picture11 = new QPixmap(":/ikonki/żolw_safe.png");
-    picture_list.append(picture11);
-
-    QPixmap *picture12 = new QPixmap(":/ikonki/bloto.png");
-    picture_list.append(picture12);
-
-    QPixmap *picture13 = new QPixmap(":/ikonki/glaz.png");
-    picture_list.append(picture13);
-
+    Mud *bl = dynamic_cast<Mud *>(ob);
+    if(bl){
+            this->picture = new QPixmap(":/ikonki/bloto.png");
+            npicture = picture;
+    }
+    hare *h = dynamic_cast<hare *>(ob);
+    if(h){
+        this->picture = new QPixmap(":/ikonki/kurlik.png");
+        npicture = picture;
+    }
+    wolf *w = dynamic_cast<wolf *>(ob);
+    if(w){
+        this->picture = new QPixmap(":/ikonki/wilk.png");
+        npicture = picture;
+    }
+    Plant *p = dynamic_cast<Plant *>(ob);
+    if(p){
+        this->picture = new QPixmap(":/ikonki/plant.png");
+        npicture = picture;
+    }
+    Mouse *m = dynamic_cast<Mouse *>(ob);
+    if(m){
+        this->picture = new QPixmap(":/ikonki/mouse.png");
+        npicture = picture;
+    }
+    Seeds *s = dynamic_cast<Seeds *>(ob);
+    if(s){
+        this->picture = new QPixmap(":/ikonki/ziarenka.png");
+        npicture = picture;
+    }
+    Fox *l = dynamic_cast<Fox *>(ob);
+    if(l){
+        this->picture = new QPixmap(":/ikonki/lis.png");
+        npicture = picture;
+    }
+    Bear *b = dynamic_cast<Bear *>(ob);
+    if(b){
+        this->picture = new QPixmap(":/ikonki/misio.png");
+        npicture = picture;
+    }
+    Snake *sn = dynamic_cast<Snake *>(ob);
+    if(sn){
+        this->picture = new QPixmap(":/ikonki/woz.png");
+        npicture = picture;
+    }
+    Tortoise *t = dynamic_cast<Tortoise *>(ob);
+    if(t){
+            this->picture = new QPixmap(":/ikonki/zolw.png");
+            npicture = new QPixmap(":/ikonki/zolws.png");
+    }
+    Stones *st = dynamic_cast<Stones *>(ob);
+    if(st){
+        this->picture = new QPixmap(":/ikonki/glaz.png");
+        npicture = picture;
+    }
+    current_picture = picture;
 
 }
 
 Gobject::~Gobject()
 {
-    qDeleteAll(picture_list);
-    picture_list.clear();
+}
+void Gobject :: draw(){
+    animals *obk = dynamic_cast<animals *>(ob);
+    if(obk){
+        if(obk->get_visibility())
+            current_picture = picture;
+        else {
+            current_picture = npicture;
+        }
+    }
 }

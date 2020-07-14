@@ -2,9 +2,12 @@
 #define MECHANICS_H
 #include <QObject>
 #include <QTimer>
-#include "species.h"
 #include "plant.h"
 #include "gobject.h"
+#include "bear.h"
+#include "hare.h"
+#include "wolf.h"
+#include "fox.h"
 
 class Mechanics : public QObject
 {

@@ -2,19 +2,21 @@
 #define GOBJECT_H
 #include "object.h"
 #include <QPainter>
-#include "species.h"
 #include "plant.h"
 
 
-
+class mechanics;
 
 class Gobject
 {
-
+    QPixmap * picture;
+    QPixmap * npicture;
 public:
-    QList <QPixmap *> picture_list;
-    Gobject();
+    Object * ob;
+    QPixmap * current_picture;
+    Gobject(Object *obi);
     ~Gobject();
+    void draw();
 };
 
 #endif // GOBJECT_H
